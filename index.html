@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CoffeeTale | Every Cup Has a Story</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                Coffee<span>Tale.</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="cart-btn" onclick="showCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    ☰
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">✦ YOUR DAILY DOSE OF HAPPINESS</p>
+
+            <h1>
+                Life Begins<br>
+                After <span>Coffee.</span>
+            </h1>
+
+            <p class="hero-description">
+                More than just coffee. It's a little moment
+                of happiness in your everyday chaos.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="primary-btn">
+                    Explore Menu ↗
+                </a>
+
+                <a href="#story" class="secondary-btn">
+                    Our Story
+                </a>
+
+            </div>
+
+            <div class="hero-rating">
+                <div class="avatars">☕ 🤎 ✨</div>
+                <div>
+                    <strong>4.9/5</strong>
+                    <p>Loved by coffee lovers</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="image-badge">
+                <span>100%</span>
+                <small>Freshly<br>Roasted</small>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000"
+                alt="Fresh coffee"
+            >
+
+            <div class="floating-note">
+                ☕ Made with love.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+
+    <div class="marquee">
+        <div>
+            FRESH COFFEE ✦ GOOD VIBES ✦ HAPPY MOMENTS ✦
+            FRESH COFFEE ✦ GOOD VIBES ✦ HAPPY MOMENTS ✦
+        </div>
+    </div>
+
+
+    <!-- STORY SECTION -->
+
+    <section class="story section" id="story">
+
+        <div class="story-image">
+            <img
+                src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=900"
+                alt="Coffee shop interior"
+            >
+        </div>
+
+        <div class="story-content">
+
+            <p class="tagline">✦ A LITTLE ABOUT US</p>
+
+            <h2>
+                Not just coffee.<br>
+                It's a <span>feeling.</span>
+            </h2>
+
+            <p>
+                At CoffeeTale, we believe every cup tells a story.
+                From carefully selected beans to that first
+                satisfying sip, we make ordinary moments special.
+            </p>
+
+            <a href="#menu" class="text-link">
+                Discover our coffee ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU SECTION -->
+
+    <section class="menu-section section" id="menu">
+
+        <div class="section-heading">
+
+            <p class="tagline">✦ BREWED TO PERFECTION</p>
+
+            <h2>
+                Find Your <span>Favourite.</span>
+            </h2>
+
+            <p>
+                Good coffee, good mood, great stories.
+            </p>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All Coffee
+            </button>
+
+            <button class="filter-btn" data-filter="hot">
+                Hot Coffee
+            </button>
+
+            <button class="filter-btn" data-filter="cold">
+                Cold Coffee
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="products" id="products">
+
+            <div class="product-card" data-category="hot">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600"
+                    alt="Cappuccino">
+                    <span class="product-label">BESTSELLER</span>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Classic Cappuccino</h3>
+                        <p>Rich espresso & silky milk</p>
+                    </div>
+
+                    <div class="product-bottom">
+                        <strong>₹149</strong>
+                        <button onclick="addToCart('Classic Cappuccino',149)">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="product-card" data-category="cold">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600"
+                    alt="Iced Coffee">
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Iced Latte</h3>
+                        <p>Chilled, creamy & refreshing</p>
+                    </div>
+
+                    <div class="product-bottom">
+                        <strong>₹179</strong>
+                        <button onclick="addToCart('Iced Latte',179)">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="product-card" data-category="hot">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=600"
+                    alt="Americano">
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Dark Americano</h3>
+                        <p>Bold, smooth & authentic</p>
+                    </div>
+
+                    <div class="product-bottom">
+                        <strong>₹129</strong>
+                        <button onclick="addToCart('Dark Americano',129)">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="product-card" data-category="cold">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600"
+                    alt="Cold coffee">
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Caramel Frappe</h3>
+                        <p>Sweet caramel with coffee</p>
+                    </div>
+
+                    <div class="product-bottom">
+                        <strong>₹199</strong>
+                        <button onclick="addToCart('Caramel Frappe',199)">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE SECTION -->
+
+    <section class="quote-section">
+
+        <p>✦ A THOUGHT FOR YOUR DAY</p>
+
+        <h2>
+            "Behind every successful day,<br>
+            there's probably a cup of coffee."
+        </h2>
+
+        <span>— CoffeeTale</span>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div>
+                <a href="#" class="logo">
+                    Coffee<span>Tale.</span>
+                </a>
+
+                <p>
+                    Brewing happiness, one cup at a time.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#story">About</a>
+                <a href="#menu">Menu</a>
+                <a href="mailto:hello@coffeetale.com">Email Us</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 CoffeeTale. Crafted with ☕ & love.
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast">
+        Added to your coffee list ☕
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
